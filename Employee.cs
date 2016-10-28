@@ -4,14 +4,19 @@ namespace PayrollSystem
 {
 	public class Employee
 	{
+
 		public String EmployeeID
 		{
 			get
 			{
-				return
+				return employee_ID;
 			}
-
+			set
+			{
+				employee_ID = value;
+			}
 		}
+
 		public String EmployeeName
 		{
 			get
@@ -22,11 +27,13 @@ namespace PayrollSystem
 			{
 				employee_Name = value;
 			}
-			
+
 		}
+
 		public String EmployeeAddress
 		{
-			get {
+			get
+			{
 				return employee_Address;
 			}
 
@@ -35,13 +42,35 @@ namespace PayrollSystem
 				employee_Address = value;
 			}
 		}
+		public String EmployeePaymethod
+		{
+			get
+			{
+				return employee_Paymethod;
+			}
+			set
+			{
+				employee_Paymethod = value;
+			}
+		}
 
+		public String EmployeeType
+		{
+			get
+			{
+				return employee_Type;
+			}
+			set
+			{
+				employee_Type = value;
+			}
+		}
 
 		protected String employee_ID;
 		protected String employee_Name;
 		protected String employee_Address;
-		protected String employee_Paymethod { get; set; }
-		protected String employee_Type { get; set; }
+		protected String employee_Paymethod;
+		protected String employee_Type;
 
 
 	}
