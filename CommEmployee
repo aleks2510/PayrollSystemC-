@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 class CommEmployee : Employee
 {
-    private double commRate { get; set; }
+    protected double commRate;
 
     // Calculate payment from rate and sales
     private double calcPayment(double rate, double salesAmount)
