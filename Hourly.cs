@@ -1,84 +1,87 @@
-class Hourly : Employee
-    {
-        private double hourlyPay;
-        private double hoursWorked;
-        private double totalHoursWorked;
-        private DateTime periodStarted;
-        private DateTime periodEnded;
-        private String reportCalendar;
-        private double periodPaymentAmount;
-        private String report;
-
-        public Hourly()
+namespace PayrollSystem
+{
+    class Hourly : Employee
         {
-            hourlyPay = 7.25;
-            hoursWorked = 0;
-            periodStarted = DateTime.Now;
-            periodEnded = DateTime.Now;
-            periodPaymentAmount = 0;
-        }
+            private double hourlyPay;
+            private double hoursWorked;
+            private double totalHoursWorked;
+            private DateTime periodStarted;
+            private DateTime periodEnded;
+            private String reportCalendar;
+            private double periodPaymentAmount;
+            private String report;
 
-        public double HourlyPay
-        {
-            get
+            public Hourly()
             {
-                return hourlyPay;
+                hourlyPay = 7.25;
+                hoursWorked = 0;
+                periodStarted = DateTime.Now;
+                periodEnded = DateTime.Now;
+                periodPaymentAmount = 0;
             }
 
-            set
+            public double HourlyPay
             {
-                hourlyPay = value;
-            }
-        }
+                get
+                {
+                    return hourlyPay;
+                }
 
-        public double HoursWorked
-        {
-            get
-            {
-                return hoursWorked;
-            }
-
-            set
-            {
-                hoursWorked = value;
-                totalHoursWorked += hoursWorked;
-                calculatePayment();
-            }
-        }
-
-        public double PeriodPaymentAmount
-        {
-            get
-            {
-                return periodPaymentAmount;
+                set
+                {
+                    hourlyPay = value;
+                }
             }
 
-            set
+            public double HoursWorked
             {
-                periodPaymentAmount = value;
+                get
+                {
+                    return hoursWorked;
+                }
+
+                set
+                {
+                    hoursWorked = value;
+                    totalHoursWorked += hoursWorked;
+                    calculatePayment();
+                }
             }
-        }
 
-        public double calculatePayment()
-        {
-            return periodPaymentAmount =  hourlyPay * totalHoursWorked;
-        }
+            public double PeriodPaymentAmount
+            {
+                get
+                {
+                    return periodPaymentAmount;
+                }
 
-        public void todayReport()
-        {
-            report += DateTime.Now + " : " + hoursWorked;
-        }
+                set
+                {
+                    periodPaymentAmount = value;
+                }
+            }
 
-        public void addTime(double timeWorked)
-        {
-            reportCalendar += DateTime.Now + " : " + timeWorked;
-        }
+            public double calculatePayment()
+            {
+                return periodPaymentAmount =  hourlyPay * totalHoursWorked;
+            }
 
-        public void payEmployee()
-        {
-            //ToDo
-            //1- check that the periodPayment Amount is different than 0
-            //2- Create an object payment
-            //3- Base on the payment method choose a payment function.
-        }
+            public void todayReport()
+            {
+                report += DateTime.Now + " : " + hoursWorked;
+            }
+
+            public void addTime(double timeWorked)
+            {
+                reportCalendar += DateTime.Now + " : " + timeWorked;
+            }
+
+            public void payEmployee()
+            {
+                //ToDo
+                //1- check that the periodPayment Amount is different than 0
+                //2- Create an object payment
+                //3- Base on the payment method choose a payment function.
+            }
+       }
    }
