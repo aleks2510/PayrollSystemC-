@@ -21,9 +21,4 @@ class CommEmployee : Employee
         double payment = commRate * salesAmount;
         return payment;
     }
-
-    //private Payment payComm (double payment, Payment p)
-    //{
-    //    return p;
-    //}
 }
